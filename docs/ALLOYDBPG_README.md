@@ -67,6 +67,7 @@ The AlloyDB MCP server provides the following tools:
 | `list_top_bloated_tables`        | List top bloated tables.                                   |
 | `list_replication_slots`         | List replication slots.                                    |
 | `list_invalid_indexes`           | List invalid indexes.                                      |
+| `get_index_recommendations`      | Get index recommendations (ADD or DROP).                   |
 
 ## Custom MCP Server Configuration
 

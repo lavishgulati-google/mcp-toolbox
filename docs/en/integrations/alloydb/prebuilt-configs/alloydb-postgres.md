@@ -41,6 +41,7 @@ description: "Details of the AlloyDB Postgres prebuilt configuration."
     *   `list_replication_slots`: Lists replication slots in the database.
     *   `list_invalid_indexes`: Lists invalid indexes in the database.
     *   `get_query_plan`: Generate the execution plan of a statement.
+    *   `get_index_recommendations`: Get index recommendations (ADD or DROP) in the database.
     *   `list_views`: Lists views in the database from pg_views with a default
         limit of 50 rows. Returns schemaname, viewname and the ownername.
     *   `list_schemas`: Lists schemas in the database.

@@ -246,6 +246,7 @@ func TestAlloyDBPgPrebuiltStatementTools(t *testing.T) {
 		"list_replication_slots":         `{}`,
 		"list_invalid_indexes":           `{}`,
 		"get_query_plan":                 `{"query": "SELECT 1"}`,
+		"get_index_recommendations":      `{}`,
 	}
 
 	tests.RunStatementToolsTest(t, toolsToTest)

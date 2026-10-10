@@ -193,6 +193,32 @@ templateParameters:
   required: true
 ---
 kind: tool
+name: get_index_recommendations
+type: postgres-sql
+source: alloydb-pg-source
+description: Get index optimization recommendations (ADD or DROP) from AlloyDB Index Advisor, returning action, index definition, estimated storage size in MB, and number of impacted queries.
+annotations:
+  readOnlyHint: true
+statement: |
+  SELECT
+      'ADD' AS action,
+      index,
+      estimated_storage_size_in_mb,
+      num_impacted_queries
+  FROM google_db_advisor_recommended_indexes
+  WHERE COALESCE(UPPER($1::text), 'ALL') IN ('ALL', 'ADD');
+parameters:
+- name: action
+  type: string
+  description: "Filter recommendations by action type: ALL, ADD, or DROP."
+  default: ALL
+  required: false
+  allowedValues:
+  - ALL
+  - ADD
+  - DROP
+---
+kind: tool
 name: list_views
 type: postgres-list-views
 source: alloydb-pg-source
@@ -496,6 +522,7 @@ tools:
 - list_pg_settings
 - database_overview
 - get_cluster
+- get_index_recommendations
 ---
 kind: group
 name: replication

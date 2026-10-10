@@ -2174,7 +2174,7 @@ func TestPrebuiltTools(t *testing.T) {
 				"optimize": group.GroupConfig{
 					Name:        "optimize",
 					Description: "Use these skills when you need to discover and manage PostgreSQL extensions or fine-tune engine-level settings such as memory allocation and server configuration parameters.",
-					ToolNames:   []string{"list_available_extensions", "list_installed_extensions", "list_memory_configurations", "list_pg_settings", "database_overview", "get_cluster"},
+					ToolNames:   []string{"list_available_extensions", "list_installed_extensions", "list_memory_configurations", "list_pg_settings", "database_overview", "get_cluster", "get_index_recommendations"},
 				},
 				"replication": group.GroupConfig{
 					Name:        "replication",
